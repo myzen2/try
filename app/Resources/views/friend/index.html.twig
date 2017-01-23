@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Listes des Utilisateurs</h1>
+
+<div class="row">
+    <div class="row">
+
+        <div class="col-md-10 col-md-offset-1">
+
+        <table class="table-bordered">
+            <thead>
+                <tr>
+                    <th class="col-md-1">Id</th>
+                    <th class="col-md-1">Age</th>
+                    <th class="col-md-1">Famille</th>
+                    <th class="col-md-1">Race</th>
+                    <th class="col-md-1">Nourriture</th>
+                    <th class="col-md-1">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.age }}</td>
+                    <td>{{ user.famille }}</td>
+                    <td>{{ user.race }}</td>
+                    <td>{{ user.nourriture }}</td>
+                    <td>
+                        <button type="checkbox" class="btn btn-default" >Ami ? </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+<br>
+<div class="">
+
+        <a href="{{ path('user_new') }}" type="button" class="btn btn-primary">Créer un nouvel utilisateur</a>
+    </div>
+{% endblock %}
